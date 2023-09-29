@@ -1,0 +1,61 @@
+---
+title: 'Base configuration for testing in Next.js with Jest and Testing Library'
+date: '2023-09-22'
+tags: ['react', 'nextjs', 'tailwindcss', 'mdx', 'testing']
+---
+
+- `npm i -D @testing-library/jest-dom @testing-library/react @testing-library/user-event jest jest-environment-jsdom ts-jest`
+- `npm i -D esling-plugin-jest-dom esling-plugin-testing-library`
+- `npm i -D msw whatwg-fetch` //fetch is needed for msw as we don't have access to the real browser fetch api.
+
+- fix the jest.config.js file:
+```
+import nextJest from 'next/jest' // if this import does not work comment it and uncomment the line below.
+// const nextJest = require('next/jest')
+
+const createJestConfig = nextJest({
+    // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
+    dir: './',
+})
+
+// Add any custom config to be passed to Jest
+/** @type {import('jest').Config} */
+const config = {
+    // Add more setup options before each test is run
+    setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+    testEnvironment: 'jest-environment-jsdom',
+    preset: 'ts-jest',
+}
+
+// createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
+// module.exports = createJestConfig(config)
+export default createJestConfig(config) // is this does not work comment it and uncomment the line above.
+```
+- and the jest.setup.js file:
+```
+import '@testing-library/jest-dom/extend-expect'
+```
+- and the .eslintrc.json file:
+```
+{
+  "extends": [
+    "next/babel",
+    "next/core-web-vitals",
+    "plugin:testing-library/react",
+    "plugin:jest-dom/recommended"
+  ]
+}
+```
+
+**Unit vs Integration vs E2E Tests:**
+- *Unit Test:* `Always take results from a single unit, such as a function call.`
+- *Integration Test:* `may aggregte results from various parts and sources.`
+- *E2E Test:* `test the whole application from the user's perspective.`
+
+**Important to see:** [Testing library types of queries](https://testing-library.com/docs/queries/about)</br>
+*getBy*: `throws an error if no element is found or if more than one element is found.`</br>
+*queryBy*: `no element => null, more than one element (throws an error)`</br>
+*findBy*: `same as getBy but waits until the element is found or timeout.` *(async)*</br>
+
+
+**Mock Service Worker (MSW):** Can be used with jest to mock the server responses.</br>

@@ -1,0 +1,18 @@
+---
+title: 'Final Project'
+date: '2023-09-28'
+tags: ['final project', 'react', 'nextjs', 'tailwindcss', 'mdx']
+---
+We previously were storing our markdown files on the server. That means every time we add a blogpost we need to re-deploy, and that is not ideal.
+
+- The first big change is that we will use [MDX](https://mdxjs.com/docs/what-is-mdx) files. <span style="font-weight: lighter;">They are more flixable then normal markdown files.</span>  
+- We will create `GitHub` repo for our blogposts. <span style="font-weight: lighter;">As we fetch the blogposts from a repo, we have dynamic content and there is no need to re-deploy.</span></br>
+
+Here is a code snippit example to be used:
+```ts
+const sum = (a: number, b: number): number => {return a + b};
+console.log(sum(1, 2)) // 3
+```
+Aslo we can add videos, or images to our blogposts.
+
+## So mdx is really powerful, comparing to markdown.
