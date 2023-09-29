@@ -1,0 +1,43 @@
+---
+title: Building static websites using Next.js and markdown files.
+date: 2023-09-11 22:00:00
+tags: ['react', 'nextjs', 'tailwindcss', 'mdx']
+---
+*Instructions here are specific to this project,*
+*for any tweaks, feel free to modify the appearence as for your needs*
+
+### Create the app
+### create the Navbar
+### create the profile photo component
+- don't forget to place the image in the public folder
+### create the **blogposts** folder in the root directory
+- this should contain the new blog posts in markdown format
+- use `types.d.ts` to define the type of the data from the markdown files
+### create a `lib` folder to contain the functions that will fetch the data from the markdown files
+- this will be within `posts.tsx`
+- `fs` `path` and `matter` are the dependencies to be used
+- `export function getSortedPostsData()` will be used to fetch the data from the markdown files
+- `export function getAllPostIds()` will be used to fetch the ids of the markdown files
+### now time to create the Post component
+- this will be within `posts/[id].tsx`
+- `import { getAllPostIds } from '../../lib/posts'` will be used to fetch the data from the markdown files
+### we create a ListItem component to display a link to a single post
+**we also need to getFormattedDate() to format the date**
+- as this will be used in multiple positions, we create it in a `utils.tsx` file
+*ListItem is now ready to be used in the Post component*
+> this is to text the right arrow.
+### Now we create a dynamic directory to individual posts
+- this will be within `posts/[id]`
+- we create `page.tsx` to display the content of the post
+- *notice: calling `getSortedPostsData()` here is deduped by Next.js*
+- *we also use `notFound` from `next/navigation`*
+- generate the **Metadata**
+- `import { getPostData } from '../../lib/posts'` will be used to fetch the data from the markdown files
+> *notice: getPostsData returns combined type of  BlogPost and html content*
+> `const blogPostWithHTML: BlogPost & { contentHtml: string } = {...}`
+> Those content will be used in the page as **dangerouslySetInnerHTML**
+### Now we can build the project
+*We notice that the post component is SSR*
+*We can use `getStaticParams` to make it SSG*
+
+> **congrats, now we have an amazing Blog website.**

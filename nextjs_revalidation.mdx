@@ -1,0 +1,21 @@
+---
+title: 'Revalidation in Next.js'
+date: '2023-09-23'
+tags: ['react', 'nextjs', 'tailwindcss', 'mdx']
+---
+### How to revalidate data in Next.js?
+
+*Actually this is vey easy to do with Next.js*</br>
+*and it can be done in various ways.*
+
+1. Revalidate data schedually every x seconds.
+    >`export const revalidate = 10`
+2. Revalidate data on every request.
+    >`export const revalidate = true`
+3. Revalidate intentionally.
+    - This will be happen using app/pages/api/revalidate.ts
+    - There is a recomnded url to use to request the revalidation.
+    - `https://<your-site.com>/api/revalidate?secret=<token>`
+    - *In dev mode, we use http not https*
+    - *also we can add a path to the url which comes handy if our site is large*
+

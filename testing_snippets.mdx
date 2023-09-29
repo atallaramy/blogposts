@@ -1,0 +1,216 @@
+---
+title: 'Testing snippets'
+date: '2023-09-21'
+tags: ['react', 'nextjs', 'tailwindcss', 'mdx']
+---
+
+**getBy**
+- PlaceHolderText: `getByPlaceholderText('placeholder text')`
+- LabelText: `getByLabelText('label text')`
+- AltText: `getByAltText('alt text')`
+- Title: `getByTitle('title text')`
+- Text: `getByText('text')`
+- DisplayValue: `getByDisplayValue('display value')`
+- Role: `getByRole('role')`
+- TestId: `getByTestId('test id')`
+
+
+**to**
+- BeChecked: `expect(element).toBeChecked()`
+- BeDisabled: `expect(element).toBeDisabled()`
+- BeEmpty: `expect(element).toBeEmpty()`
+- BeEnabled: `expect(element).toBeEnabled()`
+- BeEmptyDOMElement: `expect(element).toBeEmptyDOMElement()`
+- BeInTheDocument: `expect(element).toBeInTheDocument()`
+- BeInvalid: `expect(element).toBeInvalid()`
+- BeRequired: `expect(element).toBeRequired()`
+- BeValid: `expect(element).toBeValid()`
+- BeVisible: `expect(element).toBeVisible()`
+- ContainElement: `expect(element).toContainElement(otherElement)`
+- ContainHTML: `expect(element).toContainHTML(htmlString)`
+- ContainText: `expect(element).toContainText(text)`
+- HaveAttribute: `expect(element).toHaveAttribute(attribute, value?)`
+- HaveClass: `expect(element).toHaveClass(className)`
+- HaveFocus: `expect(element).toHaveFocus()`
+- HaveFormValues: `expect(element).toHaveFormValues(expectedValues)`
+- HaveStyle: `expect(element).toHaveStyle(css, options?)`
+- HaveTextContent: `expect(element).toHaveTextContent(text)`
+- HaveValue: `expect(element).toHaveValue(value)`
+- MatchElement: `expect(element).toMatchElement(otherElement, options?)`
+- MatchHTML: `expect(element).toMatchHTML(htmlString)`
+- MatchText: `expect(element).toMatchText(text)`
+
+**screen.**
+- Debug: `screen.debug()`
+- GetBy: `screen.getByRole('role')`
+- GetByLabelText: `screen.getByLabelText('label text')`
+- GetByPlaceholderText: `screen.getByPlaceholderText('placeholder text')`
+- GetByText: `screen.getByText('text')`
+- GetByTitle: `screen.getByTitle('title text')`
+- GetByDisplayValue: `screen.getByDisplayValue('display value')`
+- GetByTestId: `screen.getByTestId('test id')`
+- GetByAltText: `screen.getByAltText('alt text')`
+
+**userEvent.**
+- Type: `userEvent.type(element, 'text')`
+- Clear: `userEvent.clear(element)`
+- Paste: `userEvent.paste(element, 'text')`
+- SelectOptions: `userEvent.selectOptions(element, ['option1', 'option2'])`
+- Upload: `userEvent.upload(element, file)`
+- Tab: `userEvent.tab()`
+- Click: `userEvent.click(element)`
+- DoubleClick: `userEvent.dblClick(element)`
+- Hover: `userEvent.hover(element)`
+- Unhover: `userEvent.unhover(element)`
+- Focus: `userEvent.focus(element)`
+- Blur: `userEvent.blur(element)`
+
+
+**waitFor.**
+- WaitFor: `waitFor(() => getByText('text'))`
+- WaitForElementToBeRemoved: `waitForElementToBeRemoved(() => getByText('text'))`
+- WaitForElement: `waitForElement(() => getByText('text'))`
+- WaitForDomChange: `waitForDomChange()`
+- WaitForElementToBeVisible: `waitForElementToBeVisible(() => getByText('text'))`
+
+
+**act.**
+- Act: `act(() => {})`
+- Async: `act(async () => {})`
+- Wait: `act(() => {}, { timeout: 1000 })`
+- WaitAsync: `act(async () => {}, { timeout: 1000 })`
+- WaitUntil: `act(() => {}, { timeout: 1000 })`
+- WaitUntilAsync: `act(async () => {}, { timeout: 1000 })`
+
+
+**render.**
+- Render: `render(<Component />)`
+- RenderWithRouter: `renderWithRouter(<Component />)`
+- RenderWithRedux: `renderWithRedux(<Component />)`
+- RenderWithReduxAndRouter: `renderWithReduxAndRouter(<Component />)`
+- RenderWithReduxAndRouterAndTheme: `renderWithReduxAndRouterAndTheme(<Component />)`
+- RenderWithReduxAndRouterAndThemeAndApollo: `renderWithReduxAndRouterAndThemeAndApollo(<Component />)`
+- RenderWithReduxAndRouterAndThemeAndApolloAndMockedProvider: `renderWithReduxAndRouterAndThemeAndApolloAndMockedProvider(<Component />)`
+- RenderWithReduxAndRouterAndThemeAndApolloAndMockedProviderAndApolloMocks: `renderWithReduxAndRouterAndThemeAndApolloAndMockedProviderAndApolloMocks(<Component />)`
+- RenderWithReduxAndRouterAndThemeAndApolloAndMockedProviderAndApolloMocksAndApolloCache: `renderWithReduxAndRouterAndThemeAndApolloAndMockedProviderAndApolloMocksAndApolloCache(<Component />)`
+- RenderWithReduxAndRouterAndThemeAndApolloAndMockedProviderAndApolloMocksAndApolloCacheAndApolloResolvers: `renderWithReduxAndRouterAndThemeAndApolloAndMockedProviderAndApolloMocksAndApolloCacheAndApolloResolvers(<Component />)`
+- RenderWithReduxAndRouterAndThemeAndApolloAndMockedProviderAndApolloMocksAndApolloCacheAndApolloResolversAndApolloContext: `renderWithReduxAndRouterAndThemeAndApolloAndMockedProviderAndApolloMocksAndApolloCacheAndApolloResolversAndApolloContext(<Component />)`
+- RenderWithReduxAndRouterAndThemeAndApolloAndMockedProviderAndApolloMocksAndApolloCacheAndApolloResolversAndApolloContextAndApolloLinks: `renderWithReduxAndRouterAndThemeAndApolloAndMockedProviderAndApolloMocksAndApolloCacheAndApolloResolversAndApolloContextAndApolloLinks(<Component />)`
+
+
+
+**fireEvent.**
+- Blur: `fireEvent.blur(element)`
+- Change: `fireEvent.change(element, { target: { value: 'new value' } })`
+- Click: `fireEvent.click(element)`
+- DoubleClick: `fireEvent.dblClick(element)`
+- Drag: `fireEvent.drag(element)`
+- Drop: `fireEvent.drop(element)`
+- Focus: `fireEvent.focus(element)`
+- Hover: `fireEvent.hover(element)`
+- Select: `fireEvent.select(element)`
+- Touch: `fireEvent.touch(element)`
+- MouseDown: `fireEvent.mouseDown(element)`
+- MouseEnter: `fireEvent.mouseEnter(element)`
+- MouseLeave: `fireEvent.mouseLeave(element)`
+- MouseMove: `fireEvent.mouseMove(element)`
+- MouseOut: `fireEvent.mouseOut(element)`
+- MouseOver: `fireEvent.mouseOver(element)`
+- MouseUp: `fireEvent.mouseUp(element)`
+- Input: `fireEvent.input(element, { target: { value: 'new value' } })`
+- Submit: `fireEvent.submit(element)`
+- Copy: `fireEvent.copy(element)`
+- Cut: `fireEvent.cut(element)`
+- Paste: `fireEvent.paste(element)`
+- CompositionEnd: `fireEvent.compositionEnd(element)`
+- CompositionStart: `fireEvent.compositionStart(element)`
+- CompositionUpdate: `fireEvent.compositionUpdate(element)`
+- KeyDown: `fireEvent.keyDown(element, { key: 'a', code: 65 })`
+- KeyPress: `fireEvent.keyPress(element, { key: 'a', code: 65 })`
+- KeyUp: `fireEvent.keyUp(element, { key: 'a', code: 65 })`
+- FocusIn: `fireEvent.focusIn(element)`
+- FocusOut: `fireEvent.focusOut(element)`
+- Change: `fireEvent.change(element, { target: { value: 'new value' } })`
+- BeforeInput: `fireEvent.beforeInput(element, { data: 'a' })`
+- Toggle: `fireEvent.toggle(element)`
+- PointerDown: `fireEvent.pointerDown(element)`
+- PointerUp: `fireEvent.pointerUp(element)`
+- PointerCancel: `fireEvent.pointerCancel(element)`
+- PointerMove: `fireEvent.pointerMove(element)`
+- PointerEnter: `fireEvent.pointerEnter(element)`
+- PointerLeave: `fireEvent.pointerLeave(element)`
+- PointerOver: `fireEvent.pointerOver(element)`
+- PointerOut: `fireEvent.pointerOut(element)`
+- GotPointerCapture: `fireEvent.gotPointerCapture(element)`
+- LostPointerCapture: `fireEvent.lostPointerCapture(element)`
+- ContextMenu: `fireEvent.contextMenu(element)`
+- TouchStart: `fireEvent.touchStart(element)`
+- TouchEnd: `fireEvent.touchEnd(element)`
+- TouchCancel: `fireEvent.touchCancel(element)`
+- TransitionEnd: `fireEvent.transitionEnd(element)`
+- AnimationStart: `fireEvent.animationStart(element)`
+- AnimationEnd: `fireEvent.animationEnd(element)`
+- AnimationIteration: `fireEvent.animationIteration(element)`
+- AuxClick: `fireEvent.auxClick(element)`
+- GotFocus: `fireEvent.gotFocus(element)`
+- LostFocus: `fireEvent.lostFocus(element)`
+- Load: `fireEvent.load(element)`
+- Unload: `fireEvent.unload(element)`
+- Error: `fireEvent.error(element)`
+- Resize: `fireEvent.resize(element)`
+- Scroll: `fireEvent.scroll(element)`
+- Wheel: `fireEvent.wheel(element)`
+- ToggleOff: `fireEvent.toggleOff(element)`
+- ToggleOn: `fireEvent.toggleOn(element)`
+- DragStart: `fireEvent.dragStart(element)`
+- DragEnd: `fireEvent.dragEnd(element)`
+- DragEnter: `fireEvent.dragEnter(element)`
+- DragOver: `fireEvent.dragOver(element)`
+- DragLeave: `fireEvent.dragLeave(element)`
+- Drop: `fireEvent.drop(element)`
+- AudioProcess: `fireEvent.audioProcess(element)`
+- BeforeCopy: `fireEvent.beforeCopy(element)`
+- BeforeCut: `fireEvent.beforeCut(element)`
+- BeforePaste: `fireEvent.beforePaste(element)`
+- CanPlay: `fireEvent.canPlay(element)`
+- CanPlayThrough: `fireEvent.canPlayThrough(element)`
+- DurationChange: `fireEvent.durationChange(element)`
+- Emptied: `fireEvent.emptied(element)`
+- Encrypted: `fireEvent.encrypted(element)`
+- Ended: `fireEvent.ended(element)`
+- LoadedData: `fireEvent.loadedData(element)`
+- LoadedMetadata: `fireEvent.loadedMetadata(element)`
+- LoadStart: `fireEvent.loadStart(element)`
+- Pause: `fireEvent.pause(element)`
+- Play: `fireEvent.play(element)`
+- Playing: `fireEvent.playing(element)`
+- Progress: `fireEvent.progress(element)`
+- RateChange: `fireEvent.rateChange(element)`
+- Seeked: `fireEvent.seeked(element)`
+- Seeking: `fireEvent.seeking(element)`
+- Stalled: `fireEvent.stalled(element)`
+- Suspend: `fireEvent.suspend(element)`
+- TimeUpdate: `fireEvent.timeUpdate(element)`
+- VolumeChange: `fireEvent.volumeChange(element)`
+- Waiting: `fireEvent.waiting(element)`
+- SourceUpdated: `fireEvent.sourceUpdated(element)`
+- UpdateReady: `fireEvent.updateReady(element)`
+- StateChange: `fireEvent.stateChange(element)`
+- Cached: `fireEvent.cached(element)`
+- Obsolete: `fireEvent.obsolete(element)`
+- CueChange: `fireEvent.cueChange(element)`
+- CueEnter: `fireEvent.cueEnter(element)`
+- CueExit: `fireEvent.cueExit(element)`
+- VRDisplayActivate: `fireEvent.vrDisplayActivate(element)`
+- VRDisplayBlur: `fireEvent.vrDisplayBlur(element)`
+- VRDisplayConnect: `fireEvent.vrDisplayConnect(element)`
+- VRDisplayDeactivate: `fireEvent.vrDisplayDeactivate(element)`
+- VRDisplayDisconnect: `fireEvent.vrDisplayDisconnect(element)`
+- VRDisplayFocus: `fireEvent.vrDisplayFocus(element)`
+- VRDisplayPointerRestricted: `fireEvent.vrDisplayPointerRestricted(element)`
+- VRDisplayPointerUnrestricted: `fireEvent.vrDisplayPointerUnrestricted(element)`
+- VRDisplayPresentChange: `fireEvent.vrDisplayPresentChange(element)`
+- VRDisplaySqueeze: `fireEvent.vrDisplaySqueeze(element)`
+- VRDisplayUnsqueeze: `fireEvent.vrDisplayUnsqueeze(element)`
+- VRDisplayActivate: `fireEvent.vrDisplayActivate(element)`
+

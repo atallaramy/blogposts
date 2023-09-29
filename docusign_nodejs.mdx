@@ -1,0 +1,35 @@
+---
+title: 'How to use DocuSign API with Node.js'
+date: '2023-09-26'
+tags: ['docusign', 'document generation', 'react', 'nextjs', 'tailwindcss', 'mdx']
+---
+
+## DocuSign API
+*I will write everything as it is for nodejs and you can mutate it to the programming language you use.*
+
+**`npm init`** to create the project.</br>
+**`npm i express`** For this project we'll use express server.</br>
+**`npm i -save-dev nodemon`** We'll use node monitor to restart the sever on every change.</br>
+
+create `index.js`</br>
+- import express.
+- create the application and start the server.
+- in `package.json` add the script to start the server. `"start": "nodemon index.js"`
+- add a simple controler `app.get("/")` and start the server.</br>
+     <small style="font-weight: lighter;">This should render a form in a html file. Submitting the forms leads to */form* page.</small>
+- Now we can add a middleware that can process *form data*</br> <small style="font-weight: lighter;">For nodejs use `npm i body-parser`</small>
+- **`npm i docusign-esign --save`**
+- Create docusign account and get the ***integration key*** and ***secret key***.
+- Generate ***RSA private key*** <small style="font-weight: lighter;">This will be used to generate the ***JWT token***.</small>
+- Generate a ***base path*** <small style="font-weight: lighter;"> Use [Demo Link](https://demo.docusign.net/retrestapi) or [Production Link](https://www.docusign.net/restapi)</small>
+- Construct The Client.
+    - <small style="font-weight: lighter;">Set the base path</small>
+    - <small style="font-weight: lighter;">request JWTUserToken (you will need the following:)</small>
+        - <small style="font-weight: lighter;">*user_id*</small>
+        - <small style="font-weight: lighter;">*client_id(integration_key)*</small>
+        - <small style="font-weight: lighter;">*rsa_kay*</small>
+        - <small style="font-weight: lighter;">*authentication scope `There are signature scopes for different purposes` (in this case "signature")*</small>
+        - <small style="font-weight: lighter;">*jwtLIfeSecurityKey*.</small>
+- Set the Conset URI
+- Save the tokens in the header and use them to make requests (don't forget the expiration time).
+- 
