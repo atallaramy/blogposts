@@ -14,8 +14,8 @@ When using revalidate you will see updates immediately, as long as we are on the
 https://nextjs.org/docs/app/building-your-application/data-fetching/forms-and-mutations
 <br />The documentation says use `router.refresh()` to refresh the **current route**.
 The `push()` and `replace()` methods will perform a **soft navigation** if the route has been prefetched, does not include dynamic segmants or has the same dynamic parameters as the current route.<br />
-<div>Hard Navigation: <p style="font-weight: lighter;">On navigation the cache is invalidated and the server refetches data and re-renders the changed segments.</p></div>
-<div>Soft Navigation: <p style="font-weight: lighter;">On navigation, the cache for changed segments is reused (if it exists), and no new requests are made to the server for data.</p></div>
+<div>Hard Navigation: <p style={{ fontWeight: 'lighter' }}>On navigation the cache is invalidated and the server refetches data and re-renders the changed segments.</p></div>
+<div>Soft Navigation: <p style={{ fontWeight: 'lighter' }}>On navigation, the cache for changed segments is reused (if it exists), and no new requests are made to the server for data.</p></div>
 
 **Client site cache is as importand as the server components**
 While setting links not to be prefetched can be a solution but you may not want to do that with every link in you application.<br />

@@ -5,7 +5,7 @@ tags: ['final project', 'react', 'nextjs', 'tailwindcss', 'mdx']
 ---
 We previously were storing our markdown files on the server. That means every time we add a blogpost we need to re-deploy, and that is not ideal.
 
-- **The first big change** is that we will use [MDX](https://mdxjs.com/docs/what-is-mdx) files. <span style="font-weight: lighter;">They are more flixable then normal markdown files.</span>  
+- **The first big change** is that we will use [MDX](https://mdxjs.com/docs/what-is-mdx) files. <span style={{ fontWeight: 'lighter' }}>They are more flixable then normal markdown files.</span>  
 
 
 Here is a code snippit example to be used:
@@ -18,10 +18,10 @@ Aslo we can add videos, or images to our blogposts.
 *So mdx is really powerful, comparing to markdown.*<br />
 
 - **The second change** here is that we will be pulling mdx files from a separate remote GitHub repo. We will use [GitHub API](https://docs.github.com/en/rest) to fetch the files.
-- We will create `GitHub` repo for our blogposts. <span style="font-weight: lighter;">As we fetch the blogposts from a repo, we have dynamic content and there is no need to re-deploy.</span><br />
+- We will create `GitHub` repo for our blogposts. <span style={{ fontWeight: 'lighter' }}>As we fetch the blogposts from a repo, we have dynamic content and there is no need to re-deploy.</span><br />
  
 
-- <span style="font-weight: lighter;">We will use GitHub apis because if we do it when unauthorised we have a limit of 60 requests per hour. But if we do it when authorised we have a limit of 5000 requests per hour</span>. So we will use [GitHub OAuth](https://docs.github.com/en/developers/apps/authorizing-oauth-apps) to get authorised.
+- <span style={{ fontWeight: 'lighter' }}>We will use GitHub apis because if we do it when unauthorised we have a limit of 60 requests per hour. But if we do it when authorised we have a limit of 5000 requests per hour</span>. So we will use [GitHub OAuth](https://docs.github.com/en/developers/apps/authorizing-oauth-apps) to get authorised.
 - We uninstall remark, remark-html and gray-matter packages.
 - We rebuild `posts.tsx` file to fetch the posts from github repo.
 - We also will use [next-mdx-remote](https://www.npmjs.com/package/next-mdx-remote) package to render the mdx files.
