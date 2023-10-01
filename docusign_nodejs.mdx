@@ -7,17 +7,17 @@ tags: ['docusign', 'document generation', 'react', 'nextjs', 'tailwindcss', 'mdx
 ## DocuSign API
 *I will write everything as it is for nodejs and you can mutate it to the programming language you use.*
 
-**`npm init`** to create the project.</br>
-**`npm i express`** For this project we'll use express server.</br>
-**`npm i -save-dev nodemon`** We'll use node monitor to restart the sever on every change.</br>
+**`npm init`** to create the project.<br />
+**`npm i express`** For this project we'll use express server.<br />
+**`npm i -save-dev nodemon`** We'll use node monitor to restart the sever on every change.<br />
 
-create `index.js`</br>
+create `index.js`<br />
 - import express.
 - create the application and start the server.
 - in `package.json` add the script to start the server. `"start": "nodemon index.js"`
-- add a simple controler `app.get("/")` and start the server.</br>
+- add a simple controler `app.get("/")` and start the server.<br />
      <small style="font-weight: lighter;">This should render a form in a html file. Submitting the forms leads to */form* page.</small>
-- Now we can add a middleware that can process *form data*</br> <small style="font-weight: lighter;">For nodejs use `npm i body-parser`</small>
+- Now we can add a middleware that can process *form data*<br /> <small style="font-weight: lighter;">For nodejs use `npm i body-parser`</small>
 - **`npm i docusign-esign --save`**
 - Create docusign account and get the ***integration key*** and ***secret key***.
 - Generate ***RSA private key*** <small style="font-weight: lighter;">This will be used to generate the ***JWT token***.</small>
