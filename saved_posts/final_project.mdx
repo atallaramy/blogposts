@@ -27,3 +27,10 @@ Aslo we can add videos, or images to our blogposts.
 - We also will use [next-mdx-remote](https://www.npmjs.com/package/next-mdx-remote) package to render the mdx files.
     - [Access Frontmatter outside of MDX](https://github.com/hashicorp/next-mdx-remote#react-server-components-rsc--nextjs-app-directory-support)
 - as an alternative we can use [contentlayer](https://contentlayer.dev/) package to fetch the mdx files.
+
+
+- We can use `highlight.js` to highlight the code in the mdx files.
+- In combination with `highlight.js` we will use `rehype-highlight plugin` and we're going to pass that to our `compileMDX` function thro the `mdx options`.
+- Also we'll use `rehype-slug` plugin to add id's to the heading **start with #**.
+- And `rehype-autolink-headings` plugin to add links to the headings.
+- **Now we can pass all those dependencies to the `compileMDX` options.**

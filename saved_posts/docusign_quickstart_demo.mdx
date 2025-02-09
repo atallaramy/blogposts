@@ -1,0 +1,63 @@
+---
+title: 'Docusign quickstart demo functions and details.'
+date: '2023-09-28'
+tags: ['Docusign', 'demo_example', 'quickstart', 'functions_order', 'architecture']
+---
+### The order of functions called in this model is:
+- main()
+- get_private_key()
+- run_example()
+- get_token()
+- get_jwt_token()
+- get_args()
+- worker()
+- create_api_client()
+
+
+### Some details about the functions:
+- main(): 
+    - creates an api client, sets base path, and oauth host.
+    - calls `get_private_key()` function to get the private key from the file.
+    - calls `run_example()` function and passes both `api_client` and `private_key` to it.
+    - the `main()` also handles if `consent_required`, then it calls `get_consent_url()`
+    - ***the `main()` calls `run_example(private_key, api_client)`***
+
+- run_example():
+    - repasses the `api_client` and `private_key` to `get_token()` function.
+    - uses the return from `get_token()` and passes it to `get_args()` that returns `args`. 
+    - get_token():
+        - repasses the `private_key` to `get_jwt_token()` that returns `access_token`.
+        - uses the `access_token` to create a new `api_client` and `gets api_account_id` and `base_path`.
+        - returns `api_client` and `api_account_id` and `base_path`. 
+    - ***those args are:***
+    ```python
+    envelope_args = {
+        "signer_email": signer_email,
+        "signer_name": signer_name,
+        "cc_email": cc_email,
+        "cc_name": cc_name,
+    }
+    args = {
+        "account_id": api_account_id,
+        "base_path": base_path,
+        "access_token": access_token,
+        "envelope_args": envelope_args,
+    }
+    ```
+    - `run_example()` uses
+        >    `api_account_id`, `base_path` and `access_token` and passes them as `args` to `worker()` function.
+
+- `worker()` takes the `args` the DS_JWT["doc_docx"] and returns `envelope Id`
+    - it extracts the `envelope_args` from `args` and passes it along with `doc_docx_path` to `make_envelope()`.
+    - it takes the `base_path` and `access_token` and passes them to `create_api_client()`.
+    - creates `envelopes_api` and calls `envelopes_api.create_envelope()` and returns `envelope_id`.
+
+
+    Notes:
+    - form for the inputs
+    - to use webhooks to observe changes in an envelope.
+    - another page, after sending envelope, we save the evelope id and its status in a database. 
+    - after sending go to a page that has all the envelopes with status.
+    - once the envelope is signed, we update the status. 
+    - to use ngrok to expose a local server to the internet.
+    - follow python bytes.fm for more info about python.
